@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class EstadisticaPesos {
+    public static double[] solicitarPesos(int cantidadEstudiantes) {
+        Scanner scanner = new Scanner(System.in);
+        double[] pesos = new double[cantidadEstudiantes];
+
+        System.out.println("Ingresa los pesos de los " + cantidadEstudiantes + " estudiantes:");
+
+        for (int t = 0; t < cantidadEstudiantes; t++) {
+            System.out.print("Peso del estudiante " + (t + 1) + " (en kg): ");
+            pesos[t] = scanner.nextDouble();
+
+            while (pesos[t] <= 0) {
+                System.out.println("El peso debe ser mayor que 0. Intente nuevamente.");
+                System.out.print("Peso del estudiante " + (t + 1) + " (en kg): ");
+                pesos[t] = scanner.nextDouble();
+            }
+        }
+
+        return pesos; 
+    }
+}
+ 
