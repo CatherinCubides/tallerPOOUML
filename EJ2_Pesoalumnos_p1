@@ -1,0 +1,36 @@
+public class Peso_alumnos {
+
+    public static void main(String[] args) {
+        Scanner solicitar = new Scanner(System.in);
+
+        System.out.print("Ingresa la cantidad de estudiantes: ");
+        int cantidadEstudiantes = solicitar.nextInt();
+
+        double[] pesos = EstadisticaPesos.solicitarPesos(cantidadEstudiantes);
+
+        int menosDe45 = 0;
+        int entre45y55 = 0;
+        int entre55y65 = 0;
+        int masDe65 = 0;
+
+        for (double peso : pesos) {
+            if (peso < 45) {
+                menosDe45++;} 
+            else if (peso >= 45 && peso <= 55) {
+                entre45y55++;}
+             else if (peso > 55 && peso < 65) {
+                entre55y65++;}
+             else {
+                masDe65++;} }       
+        
+        double porcentaje55y65 = (double) entre55y65 / cantidadEstudiantes * 100;
+        double porcentajeMasDe65 = (double) masDe65 / cantidadEstudiantes * 100;
+
+        System.out.println("\nResultados:");
+        System.out.println("Los estudiantes que pesan menos de 45 kg son: " + menosDe45);
+        System.out.println("Los estudiantes que pesan entre 45 y 55 kg son: " + entre45y55);
+        System.out.printf("El Porcentaje de estudiantes que pesan mas de 55 kg y menos de 65 kg son: %.2f%%\n", porcentaje55y65);
+        System.out.printf("El porcentaje de estudiantes que pesan 65 kg o mas: %.2f%%\n", porcentajeMasDe65);
+
+    }
+}
