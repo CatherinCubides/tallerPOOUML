@@ -1,0 +1,15 @@
+public class ListasComparacion {
+public static int[] compararListas(double[] listaA, double[] listaB) {
+        int[] listaC = new int[listaA.length]; 
+
+        for (int i = 0; i < listaA.length; i++) {
+            if (listaA[i] == listaB[i]) {
+                listaC[i] = 1; 
+            } else {
+                listaC[i] = 0; 
+            }
+        }
+
+        return listaC; 
+    }
+}
