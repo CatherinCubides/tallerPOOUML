@@ -1,0 +1,31 @@
+public class Listas {
+ public static void main(String[] args) {
+double[] listaA = {7, 5, 2, 1, 8, 5, 3, 8, 9, 7};
+        double[] listaB = {7, 1, 1, 1, 9, 7, 3, 4, 9, 7};
+
+        int[] listaC = ListasComparacion.compararListas(listaA, listaB);
+
+        System.out.println("Lista A:");
+        mostrarLista(listaA);
+
+        System.out.println("\nLista B:");
+        mostrarLista(listaB);
+
+        System.out.println("\nLista C:");
+        mostrarLista(listaC);
+    }
+
+    public static void mostrarLista(double[] lista) {
+        for (double elemento : lista) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+    }
+
+    public static void mostrarLista(int[] lista) {
+        for (int elemento : lista) {
+            System.out.print(elemento + " ");
+        }
+        System.out.println();
+    }
+}
