@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Temperatura {
+
+    public static double[] solicitarTemperaturas() {
+        Scanner solicitar = new Scanner(System.in);
+        double[] temperaturas = new double[31]; 
+
+        System.out.println("Ingrese las temperaturas promedio diarias de enero (10 a 30 grados):");
+
+        for (int i = 0; i < temperaturas.length; i++) {
+            System.out.print("Día " + (i + 1) + ": ");
+            temperaturas[i] = solicitar.nextDouble();
+
+            while (temperaturas[i] < 10 || temperaturas[i] > 30) {
+                System.out.println("Temperatura fuera de rango. Ingrese un valor entre 10 y 30.");
+                System.out.print("Día " + (i + 1) + ": ");
+                temperaturas[i] = solicitar.nextDouble();
+            }
+        }
+
+        return temperaturas; 
+    }
+}
