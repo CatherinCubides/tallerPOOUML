@@ -1,0 +1,31 @@
+public class JavaApplication1 {
+public static void main(String[] args) {
+
+        double[] temperaturas = Temperatura.solicitarTemperaturas();
+
+        int diaMayorTemp = 0;
+        int diaMenorTemp = 0;
+        double mayorTemp = temperaturas[0];
+        double menorTemp = temperaturas[0];
+        double sumaTemperaturas = 0;
+
+        for (int c = 0; c < temperaturas.length; c++) {
+            if (temperaturas[c] > mayorTemp) {
+                mayorTemp = temperaturas[c];
+                diaMayorTemp = c + 1; }
+            
+            if (temperaturas[c] < menorTemp) {
+                menorTemp = temperaturas[c];
+                diaMenorTemp = c + 1;} 
+            
+            sumaTemperaturas += temperaturas[c];}
+        
+        double promedioMensual = sumaTemperaturas / temperaturas.length;
+
+        System.out.println("\nResultados:");
+        System.out.println("El día de mayor temperatura es: Día " + diaMayorTemp);
+        System.out.println("El día de menor temperatura es: Día " + diaMenorTemp);
+        System.out.println("La mayor temperatura es: " + mayorTemp + " grados");
+        System.out.println("El promedio mensual de temperaturas es: " + promedioMensual + " grados");
+    }
+}
